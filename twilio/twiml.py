@@ -22,11 +22,11 @@ class Verb(object):
         self.verbs = []
         self.attrs = {}
 
-        if kwargs.get("waitMethod", "GET") not in ["GET", "POST"]:
+        if kwargs.get("waitMethod", None) not in [None, "GET", "POST"]:
             raise TwimlException("Invalid waitMethod parameter, "
                                  "must be 'GET' or 'POST'")
 
-        if kwargs.get("method", "GET") not in ["GET", "POST"]:
+        if kwargs.get("method", None) not in [None, "GET", "POST"]:
             raise TwimlException("Invalid method parameter, "
                                  "must be 'GET' or 'POST'")
 
